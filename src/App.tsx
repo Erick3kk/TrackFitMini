@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Welcome } from "./components/Welcome"
+
+import { ExerciseList } from "./components/ExerciseList"
+
+import { Motivacional } from "./components/motivacionalMSG"
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+      <Welcome />
+      <ExerciseList />
+      <div style={{ border:'4px solid black',
+            textAlign: 'center',
+            backgroundColor: 'gray',
+            padding: '20px',
+            margin: '20px',
+            textShadow: '1px 1px 0 black',
+            fontFamily:'cursive',
+            fontSize: '20px',
+            display: "grid",
+            columnGap: "30px",
+            boxShadow: '5px 5px 10px 0px rgba(0, 0, 0, 0.5)',
+            gap: '10px' }}>
+        <h1>TrackFit</h1>
+        <Motivacional
+          titulo="Trackfit MINI motivation"
+          mensagem ="Não deixe que a preguiça seja maior que a vontade de vencer!!"
+          altor ="Matheus"
+        />
+    </div>
+   </> 
   )
 }
 
-export default App
+export default App;
